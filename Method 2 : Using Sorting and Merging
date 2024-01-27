@@ -1,0 +1,26 @@
+def areDisjoint(set1, set2, m, n):
+    # Sort the given two sets
+    set1.sort()
+    set2.sort()
+ 
+    # Check for same elements 
+    # using merge like process
+    i = 0; j = 0
+    while (i < m and j < n):
+         
+        if (set1[i] < set2[j]):
+            i += 1
+        elif (set2[j] < set1[i]):
+            j += 1
+        else: # if set1[i] == set2[j]
+            return False
+    return True
+ 
+ 
+# Driver Code
+arr1 = [12, 34, 11, 9, 3]
+arr2 = [7, 2, 1, 5]
+m = len(arr1)
+n = len(arr2)
+ 
+print("Yes") if areDisjoint(arr1, arr2, m, n) else print("No")
