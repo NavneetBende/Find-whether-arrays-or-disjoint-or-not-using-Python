@@ -1,0 +1,27 @@
+def areDisjoint(set1, set2, n1, n2):
+   
+  # Creates an empty hashset
+  myset = set([])
+   
+  # Traverse the first set
+  # and store its elements in hash
+  for i in range (n1):
+    myset.add(set1[i])
+     
+  for i in range (n2):
+    if (set2[i] in myset):
+      return False
+  return True
+ 
+# Driver method to test above method
+
+arr1 = [10, 5, 3, 4, 6]
+arr2 = [8, 7, 9, 3]
+ 
+n1 = len(arr1)
+n2 = len(arr2)
+   
+if (areDisjoint(arr1, arr2, n1, n2)):
+    print ("Yes")
+else:
+    print("No")
